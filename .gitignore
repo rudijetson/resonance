@@ -5,3 +5,4 @@ recordings/
 .env
 .firebase/
 firebase-debug.log
+.vercel

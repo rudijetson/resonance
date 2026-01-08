@@ -5,10 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vercel dev",
-    "build": "vercel build",
-    "start": "vercel dev",
-    "deploy": "vercel --prod",
-    "deploy:preview": "vercel"
+    "start": "vercel dev"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.1.76",
