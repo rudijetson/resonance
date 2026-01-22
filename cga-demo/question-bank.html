@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Good Alliance - Community Voice Line Question Bank</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.75in;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #2d5a27;
+    }
+
+    .org-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #2d5a27;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .doc-title {
+      font-size: 22px;
+      color: #1a1a1a;
+      margin-top: 20px;
+    }
+
+    .doc-subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    /* Mission & Values */
+    .mission-box {
+      background: #f8f9f5;
+      border-left: 4px solid #2d5a27;
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .mission-box h3 {
+      color: #2d5a27;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .mission-box p {
+      font-size: 15px;
+    }
+
+    .values {
+      text-align: center;
+      margin: 20px 0 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .values span {
+      color: #2d5a27;
+      font-weight: bold;
+    }
+
+    /* Call Flow */
+    .call-flow {
+      background: #fdfdf9;
+      border: 1px solid #e0e0d8;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .call-flow h2 {
+      font-size: 16px;
+      color: #2d5a27;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .script {
+      background: #fff;
+      border-left: 3px solid #ccc;
+      padding: 15px 20px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #444;
+    }
+
+    .script-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #999;
+      font-style: normal;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+
+    /* Pillars Overview */
+    .pillars-overview {
+      margin: 40px 0;
+    }
+
+    .pillars-overview h2 {
+      font-size: 18px;
+      color: #2d5a27;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .pillar-card {
+      background: #f8f9f5;
+      padding: 15px 10px;
+      text-align: center;
+      border-radius: 6px;
+      border-top: 3px solid #2d5a27;
+    }
+
+    .pillar-card h4 {
+      font-size: 12px;
+      color: #2d5a27;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .pillar-card p {
+      font-size: 11px;
+      color: #666;
+    }
+
+    /* Question Sections */
+    .pillar-section {
+      margin: 50px 0;
+      page-break-inside: avoid;
+    }
+
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #2d5a27;
+    }
+
+    .pillar-number {
+      background: #2d5a27;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin-right: 15px;
+    }
+
+    .pillar-title {
+      font-size: 20px;
+      color: #1a1a1a;
+    }
+
+    .pillar-focus {
+      font-size: 14px;
+      color: #666;
+      font-weight: normal;
+      margin-left: 10px;
+    }
+
+    .questions-list {
+      list-style: none;
+    }
+
+    .question-item {
+      margin: 20px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .question-item::before {
+      content: attr(data-num);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #e8ede6;
+      color: #2d5a27;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .question-text {
+      font-size: 15px;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    .question-note {
+      font-size: 13px;
+      color: #888;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0.5in;
+      }
+      .pillar-section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="org-name">COMMON GOOD ALLIANCE</div>
+    <div class="tagline">"Moving the Dollar in Our Community"</div>
+    <h1 class="doc-title">Community Voice Line</h1>
+    <div class="doc-subtitle">Question Bank &amp; Call Flow</div>
+  </header>
+
+  <!-- Mission -->
+  <div class="mission-box">
+    <h3>Mission</h3>
+    <p>Cultivate the social infrastructure for the common good by investing in local assets and business talent, while leveraging the economic power of the Black dollar.</p>
+  </div>
+
+  <div class="values">
+    <span>Compassion</span> &middot; <span>Trust</span> &middot; <span>Radical Collaboration</span>
+  </div>
+
+  <!-- Target Area -->
+  <div class="mission-box">
+    <h3>Target Community</h3>
+    <p><strong>North College Hill</strong>, Hamilton County, Ohio<br>
+    Population: ~9,000 residents</p>
+  </div>
+
+  <!-- Call Flow -->
+  <div class="call-flow">
+    <h2>Call Flow</h2>
+
+    <div class="script">
+      <div class="script-label">Opening</div>
+      "Thank you for calling the Common Good Alliance Community Voice line. Your input will help shape the future of North College Hill."
+    </div>
+
+    <div class="script">
+      <div class="script-label">Identification</div>
+      "Please state your full name and the street or neighborhood where you live."
+    </div>
+
+    <div class="script">
+      <div class="script-label">Questions</div>
+      2-4 questions based on the selected campaign pillar (see below)
+    </div>
+
+    <div class="script">
+      <div class="script-label">Closing</div>
+      "Thank you for sharing your voice. Your feedback will help the Common Good Alliance advocate for North College Hill. Goodbye."
+    </div>
+  </div>
+
+  <!-- Pillars Overview -->
+  <div class="pillars-overview">
+    <h2>Strategic Pillars</h2>
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <h4>Land</h4>
+        <p>Strategic acquisition &amp; community ownership</p>
+      </div>
+      <div class="pillar-card">
+        <h4>Capital</h4>
+        <p>Investment &amp; economic growth</p>
+      </div>
+      <div class="pillar-card">
+        <h4>Arts &amp; Culture</h4>
+        <p>Preserving history &amp; celebrating artists</p>
+      </div>
+      <div class="pillar-card">
+        <h4>Housing</h4>
+        <p>Rental &amp; ownership options</p>
+      </div>
+      <div class="pillar-card">
+        <h4>Enterprise</h4>
+        <p>Supporting Black-owned businesses</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pillar 1: Land -->
+  <section class="pillar-section">
+    <div class="pillar-header">
+      <div class="pillar-number">1</div>
+      <h2 class="pillar-title">LAND <span class="pillar-focus">Strategic acquisition and utilization</span></h2>
+    </div>
+    <ul class="questions-list">
+      <li class="question-item" data-num="1">
+        <div class="question-text">"Are there vacant lots or unused properties in your neighborhood that concern you? If so, where?"</div>
+        <div class="question-note">Identifies specific problem areas</div>
+      </li>
+      <li class="question-item" data-num="2">
+        <div class="question-text">"What would you like to see built or developed on vacant land in North College Hill?"</div>
+        <div class="question-note">Captures community vision</div>
+      </li>
+      <li class="question-item" data-num="3">
+        <div class="question-text">"Would you support community ownership of land - such as a land trust - in your neighborhood? Why or why not?"</div>
+        <div class="question-note">Gauges support for collective models</div>
+      </li>
+      <li class="question-item" data-num="4">
+        <div class="question-text">"Is there anything else you'd like to share about land use in North College Hill?"</div>
+        <div class="question-note">Open-ended capture</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Pillar 2: Capital -->
+  <section class="pillar-section">
+    <div class="pillar-header">
+      <div class="pillar-number">2</div>
+      <h2 class="pillar-title">ORGANIZING CAPITAL <span class="pillar-focus">Investment and economic growth</span></h2>
+    </div>
+    <ul class="questions-list">
+      <li class="question-item" data-num="1">
+        <div class="question-text">"If you had $500 to invest in a local project, what kind of project would you want to support?"</div>
+        <div class="question-note">Reveals investment priorities</div>
+      </li>
+      <li class="question-item" data-num="2">
+        <div class="question-text">"What barriers have you or people you know faced when trying to access loans or funding?"</div>
+        <div class="question-note">Identifies systemic obstacles</div>
+      </li>
+      <li class="question-item" data-num="3">
+        <div class="question-text">"Would you participate in a community investment fund to support local Black-owned businesses?"</div>
+        <div class="question-note">Gauges collective action interest</div>
+      </li>
+      <li class="question-item" data-num="4">
+        <div class="question-text">"Is there anything else you'd like to share about investment and economic opportunity here?"</div>
+        <div class="question-note">Open-ended capture</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Pillar 3: Arts & Culture -->
+  <section class="pillar-section">
+    <div class="pillar-header">
+      <div class="pillar-number">3</div>
+      <h2 class="pillar-title">ARTS &amp; CULTURE <span class="pillar-focus">Preserving and celebrating local heritage</span></h2>
+    </div>
+    <ul class="questions-list">
+      <li class="question-item" data-num="1">
+        <div class="question-text">"What local artists, musicians, or cultural traditions in North College Hill should be celebrated or preserved?"</div>
+        <div class="question-note">Surfaces community assets</div>
+      </li>
+      <li class="question-item" data-num="2">
+        <div class="question-text">"Where would you like to see public art - such as murals or sculptures - in the neighborhood?"</div>
+        <div class="question-note">Identifies locations for investment</div>
+      </li>
+      <li class="question-item" data-num="3">
+        <div class="question-text">"What cultural events or programs would you attend or want to see offered?"</div>
+        <div class="question-note">Gauges demand for programming</div>
+      </li>
+      <li class="question-item" data-num="4">
+        <div class="question-text">"Is there anything else you'd like to share about arts and culture in North College Hill?"</div>
+        <div class="question-note">Open-ended capture</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Pillar 4: Housing -->
+  <section class="pillar-section">
+    <div class="pillar-header">
+      <div class="pillar-number">4</div>
+      <h2 class="pillar-title">HOUSING <span class="pillar-focus">Rental and ownership options</span></h2>
+    </div>
+    <ul class="questions-list">
+      <li class="question-item" data-num="1">
+        <div class="question-text">"Do you currently rent or own your home?"</div>
+        <div class="question-note">Demographic baseline</div>
+      </li>
+      <li class="question-item" data-num="2">
+        <div class="question-text">"What's your biggest challenge with housing right now - affordability, maintenance, safety, or something else?"</div>
+        <div class="question-note">Identifies primary pain points</div>
+      </li>
+      <li class="question-item" data-num="3">
+        <div class="question-text">"What would help more residents become homeowners in North College Hill?"</div>
+        <div class="question-note">Surfaces solutions from community</div>
+      </li>
+      <li class="question-item" data-num="4">
+        <div class="question-text">"Is there anything else you'd like to share about housing in your neighborhood?"</div>
+        <div class="question-note">Open-ended capture</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Pillar 5: Enterprise -->
+  <section class="pillar-section">
+    <div class="pillar-header">
+      <div class="pillar-number">5</div>
+      <h2 class="pillar-title">ENTERPRISE <span class="pillar-focus">Supporting Black-owned businesses</span></h2>
+    </div>
+    <ul class="questions-list">
+      <li class="question-item" data-num="1">
+        <div class="question-text">"What types of businesses are missing in North College Hill that you wish were here?"</div>
+        <div class="question-note">Identifies market gaps</div>
+      </li>
+      <li class="question-item" data-num="2">
+        <div class="question-text">"Do you currently support any Black-owned businesses in the area? Which ones?"</div>
+        <div class="question-note">Maps existing ecosystem</div>
+      </li>
+      <li class="question-item" data-num="3">
+        <div class="question-text">"If you're a business owner or aspiring entrepreneur, what support would help you most?"</div>
+        <div class="question-note">Captures entrepreneur needs</div>
+      </li>
+      <li class="question-item" data-num="4">
+        <div class="question-text">"Is there anything else you'd like to share about local businesses and economic development?"</div>
+        <div class="question-note">Open-ended capture</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Common Good Alliance &middot; Cincinnati, OH &middot; Community Voice Line Question Bank</p>
+    <p style="margin-top: 5px;">Prepared for North College Hill Campaign</p>
+  </footer>
+
+</body>
+</html>

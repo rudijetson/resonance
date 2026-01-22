@@ -1,0 +1,80 @@
+{
+  "name": "CGA Community Voice Response Schema",
+  "version": "1.0",
+  "description": "Schema for community voice line response data",
+  "columns": [
+    {
+      "name": "respondent_id",
+      "type": "string",
+      "description": "Unique ID for the caller",
+      "format": "NCH-XXX",
+      "required": true
+    },
+    {
+      "name": "full_name",
+      "type": "string",
+      "description": "From identification prompt",
+      "required": true
+    },
+    {
+      "name": "neighborhood",
+      "type": "string",
+      "description": "Street or area in North College Hill",
+      "required": true
+    },
+    {
+      "name": "channel",
+      "type": "enum",
+      "values": ["web", "phone", "sms"],
+      "description": "How they submitted their response",
+      "required": true
+    },
+    {
+      "name": "pillar",
+      "type": "enum",
+      "values": ["Land", "Capital", "Arts", "Housing", "Enterprise"],
+      "description": "Which strategic pillar campaign",
+      "required": true
+    },
+    {
+      "name": "question_num",
+      "type": "integer",
+      "min": 1,
+      "max": 4,
+      "description": "Question number within the pillar",
+      "required": true
+    },
+    {
+      "name": "question_text",
+      "type": "string",
+      "description": "The full question that was asked",
+      "required": true
+    },
+    {
+      "name": "response_text",
+      "type": "string",
+      "description": "The respondent's answer (transcript)",
+      "required": true
+    },
+    {
+      "name": "duration_sec",
+      "type": "integer",
+      "description": "Audio length in seconds (null for SMS)",
+      "required": false
+    },
+    {
+      "name": "sentiment",
+      "type": "enum",
+      "values": ["positive", "neutral", "negative"],
+      "description": "Overall sentiment of the response",
+      "required": true
+    },
+    {
+      "name": "timestamp",
+      "type": "datetime",
+      "format": "ISO 8601",
+      "description": "When the response was submitted",
+      "required": true
+    }
+  ]
+}

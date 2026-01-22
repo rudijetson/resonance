@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGA Community Voice Report - North College Hill</title>
+  <style>
+    :root {
+      --cga-green: #2d5a27;
+      --cga-green-light: #e8f0e6;
+      --cga-gold: #c9a227;
+      --cga-dark: #1a1a1a;
+      --cga-gray: #666;
+      --cga-light: #f8f9fa;
+      --cga-red: #c0392b;
+      --cga-blue: #2c3e50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--cga-dark);
+      background: #fff;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--cga-green) 0%, #1e3d1a 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .header h1 strong {
+      font-weight: 700;
+    }
+
+    .header-subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .header-meta {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--cga-light);
+      border-bottom: 3px solid var(--cga-green);
+    }
+
+    .stat-item {
+      padding: 30px 20px;
+      text-align: center;
+      border-right: 1px solid #ddd;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--cga-green);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--cga-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Executive Summary */
+    .executive-summary {
+      padding: 60px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--cga-green);
+      margin-bottom: 15px;
+    }
+
+    .section-heading {
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .summary-text {
+      font-size: 18px;
+      color: var(--cga-gray);
+      line-height: 1.8;
+    }
+
+    .key-takeaways {
+      background: var(--cga-green-light);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .key-takeaways h3 {
+      font-size: 16px;
+      color: var(--cga-green);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .takeaway-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .takeaway-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--cga-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .takeaway-text {
+      font-size: 14px;
+      color: var(--cga-dark);
+    }
+
+    /* Priorities Section */
+    .priorities-section {
+      padding: 60px 0;
+      background: var(--cga-light);
+    }
+
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .priority-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--cga-green);
+    }
+
+    .priority-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--cga-green-light);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .priority-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .priority-desc {
+      font-size: 14px;
+      color: var(--cga-gray);
+    }
+
+    .priority-support {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+    }
+
+    .support-badge {
+      display: inline-block;
+      background: var(--cga-green);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    /* Pillar Analysis */
+    .pillar-section {
+      padding: 60px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .pillar-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--cga-green);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .pillar-title {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .pillar-subtitle {
+      font-size: 14px;
+      color: var(--cga-gray);
+    }
+
+    .pillar-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .findings-list {
+      list-style: none;
+    }
+
+    .finding-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .finding-item:last-child {
+      border-bottom: none;
+    }
+
+    .finding-percent {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cga-green);
+      min-width: 60px;
+    }
+
+    .finding-text h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .finding-text p {
+      font-size: 14px;
+      color: var(--cga-gray);
+    }
+
+    /* Concerns Box */
+    .concerns-box {
+      background: #fff5f5;
+      border-left: 4px solid var(--cga-red);
+      padding: 25px;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .concerns-box h4 {
+      color: var(--cga-red);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .concern-item {
+      font-size: 14px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .concern-item::before {
+      content: "!";
+      position: absolute;
+      left: 0;
+      color: var(--cga-red);
+      font-weight: bold;
+    }
+
+    /* Consensus Box */
+    .consensus-box {
+      background: var(--cga-green-light);
+      border-left: 4px solid var(--cga-green);
+      padding: 25px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 20px;
+    }
+
+    .consensus-box h4 {
+      color: var(--cga-green);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .consensus-item {
+      font-size: 14px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .consensus-item::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--cga-green);
+      font-weight: bold;
+    }
+
+    /* Quotes Section */
+    .quotes-section {
+      padding: 60px 0;
+      background: var(--cga-dark);
+      color: white;
+    }
+
+    .quotes-section .section-title {
+      color: var(--cga-gold);
+    }
+
+    .quotes-section .section-heading {
+      color: white;
+    }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .quote-card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid var(--cga-gold);
+    }
+
+    .quote-text {
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .quote-author {
+      font-size: 14px;
+      color: var(--cga-gold);
+    }
+
+    .quote-context {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 5px;
+    }
+
+    /* Action Items */
+    .action-section {
+      padding: 60px 0;
+    }
+
+    .action-timeline {
+      margin-top: 30px;
+    }
+
+    .timeline-period {
+      margin-bottom: 40px;
+    }
+
+    .period-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .period-badge {
+      background: var(--cga-green);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .period-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .action-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .action-item {
+      background: var(--cga-light);
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .action-check {
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--cga-green);
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .action-content h4 {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .action-content p {
+      font-size: 13px;
+      color: var(--cga-gray);
+    }
+
+    /* Footer */
+    .report-footer {
+      background: var(--cga-green);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .footer-tagline {
+      opacity: 0.8;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .footer-meta {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* Print Styles */
+    @media print {
+      .header {
+        padding: 40px;
+      }
+      .stats-bar {
+        break-inside: avoid;
+      }
+      .pillar-section {
+        break-inside: avoid;
+      }
+      .quote-card {
+        break-inside: avoid;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .summary-grid,
+      .pillar-content,
+      .quotes-grid,
+      .action-list {
+        grid-template-columns: 1fr;
+      }
+      .priority-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-badge">Community Voice Report</div>
+    <h1><strong>Common Good Alliance</strong></h1>
+    <p class="header-subtitle">North College Hill Community Listening Campaign</p>
+    <div class="header-meta">
+      <span>Hamilton County, Ohio</span>
+      <span>January 2026</span>
+      <span>250 Residents Surveyed</span>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">250</div>
+      <div class="stat-label">Community Members</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1,000</div>
+      <div class="stat-label">Total Responses</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">5</div>
+      <div class="stat-label">Strategic Pillars</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">78%</div>
+      <div class="stat-label">Support Land Trust</div>
+    </div>
+  </div>
+
+  <!-- Executive Summary -->
+  <section class="executive-summary">
+    <div class="container">
+      <div class="section-title">Executive Summary</div>
+      <h2 class="section-heading">What the Community is Saying</h2>
+
+      <div class="summary-grid">
+        <div class="summary-text">
+          <p>North College Hill residents demonstrate deep commitment to their community despite decades of disinvestment. Across all five pillars, a clear message emerges: <strong>residents are ready for action, not more surveys.</strong></p>
+          <br>
+          <p>There is near-universal support (78%+) for community-controlled solutions like land trusts and investment funds. Residents explicitly connect current challenges to historical patterns—redlining, displacement in Over-the-Rhine, broken promises—and demand authentic community control over any new initiatives.</p>
+          <br>
+          <p>The community identifies immediate needs (pharmacy, grocery store, vacant property intervention) alongside long-term vision (Hamilton Avenue transformation, generational wealth building). Critically, trust must be earned through visible quick wins before larger initiatives can succeed.</p>
+        </div>
+
+        <div class="key-takeaways">
+          <h3>Key Takeaways</h3>
+          <div class="takeaway-item">
+            <div class="takeaway-icon">1</div>
+            <div class="takeaway-text"><strong>Action over surveys</strong> - Community is skeptical from past disappointments</div>
+          </div>
+          <div class="takeaway-item">
+            <div class="takeaway-icon">2</div>
+            <div class="takeaway-text"><strong>Community control</strong> - Not just input, but genuine governance power</div>
+          </div>
+          <div class="takeaway-item">
+            <div class="takeaway-icon">3</div>
+            <div class="takeaway-text"><strong>Anti-displacement</strong> - Fear of being "OTR'd" is explicit and evidence-based</div>
+          </div>
+          <div class="takeaway-item">
+            <div class="takeaway-icon">4</div>
+            <div class="takeaway-text"><strong>Quick wins needed</strong> - Visible action builds trust for bigger initiatives</div>
+          </div>
+          <div class="takeaway-item">
+            <div class="takeaway-icon">5</div>
+            <div class="takeaway-text"><strong>Church partnerships</strong> - Faith institutions are trusted anchors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Priorities -->
+  <section class="priorities-section">
+    <div class="container">
+      <div class="section-title">Community Priorities</div>
+      <h2 class="section-heading">Where to Focus First</h2>
+
+      <div class="priority-grid">
+        <div class="priority-card">
+          <div class="priority-number">01</div>
+          <div class="priority-title">Community Land Trust</div>
+          <div class="priority-desc">Establish community-controlled land ownership to prevent displacement and build generational wealth through affordable homeownership.</div>
+          <div class="priority-support">
+            <span class="support-badge">78%</span> support among respondents
+          </div>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-number">02</div>
+          <div class="priority-title">Healthcare Access</div>
+          <div class="priority-desc">Recruit pharmacy and urgent care to address "healthcare desert" - seniors driving 15+ minutes for medications.</div>
+          <div class="priority-support">
+            <span class="support-badge">86%</span> cite as critical gap
+          </div>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-number">03</div>
+          <div class="priority-title">Community Investment Fund</div>
+          <div class="priority-desc">Pool community resources to support Black-owned businesses with patient capital and flexible terms.</div>
+          <div class="priority-support">
+            <span class="support-badge">95%</span> would participate
+          </div>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-number">04</div>
+          <div class="priority-title">Vacant Property Action</div>
+          <div class="priority-desc">Address abandoned properties creating blight and safety concerns. Give residents first right of refusal before investors.</div>
+          <div class="priority-support">
+            <span class="support-badge">60%</span> report vacant properties nearby
+          </div>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-number">05</div>
+          <div class="priority-title">Down Payment Assistance</div>
+          <div class="priority-desc">Help renters become homeowners - they can afford payments but lack down payment savings.</div>
+          <div class="priority-support">
+            <span class="support-badge">#1</span> housing request
+          </div>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-number">06</div>
+          <div class="priority-title">Heritage Documentation</div>
+          <div class="priority-desc">Urgent oral history project to capture elder knowledge of Underground Railroad history, Black homesteading legacy.</div>
+          <div class="priority-support">
+            <span class="support-badge">TIME</span> sensitive - elders aging
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Land Pillar -->
+  <section class="pillar-section">
+    <div class="container">
+      <div class="pillar-header">
+        <div class="pillar-icon">🏠</div>
+        <div>
+          <div class="pillar-title">Land</div>
+          <div class="pillar-subtitle">Strategic acquisition and community ownership</div>
+        </div>
+      </div>
+
+      <div class="pillar-content">
+        <div>
+          <ul class="findings-list">
+            <li class="finding-item">
+              <div class="finding-percent">78%</div>
+              <div class="finding-text">
+                <h4>Support Community Land Trust</h4>
+                <p>Strong buy-in for community-controlled land ownership model</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">68%</div>
+              <div class="finding-text">
+                <h4>Concerned About Vacant Properties</h4>
+                <p>Abandoned lots and buildings affecting safety and property values</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">54%</div>
+              <div class="finding-text">
+                <h4>Want Affordable Homeownership</h4>
+                <p>Define "affordable" as under $150k - accessible to $30-50k earners</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="consensus-box">
+            <h4>Consensus Points</h4>
+            <div class="consensus-item">Focus on affordable homeownership first</div>
+            <div class="consensus-item">Genuine resident control in governance</div>
+            <div class="consensus-item">Learn from OTR mistakes - prevent displacement</div>
+            <div class="consensus-item">Grocery store gap must be addressed</div>
+          </div>
+
+          <div class="concerns-box" style="margin-top: 20px;">
+            <h4>Key Concerns</h4>
+            <div class="concern-item">Deep skepticism from broken promises</div>
+            <div class="concern-item">Fear of gentrification and displacement</div>
+            <div class="concern-item">City responsiveness extremely low</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capital Pillar -->
+  <section class="pillar-section">
+    <div class="container">
+      <div class="pillar-header">
+        <div class="pillar-icon">💰</div>
+        <div>
+          <div class="pillar-title">Organizing Capital</div>
+          <div class="pillar-subtitle">Investment and economic growth</div>
+        </div>
+      </div>
+
+      <div class="pillar-content">
+        <div>
+          <ul class="findings-list">
+            <li class="finding-item">
+              <div class="finding-percent">95%</div>
+              <div class="finding-text">
+                <h4>Support Community Investment Fund</h4>
+                <p>Near-universal support for pooled resources supporting Black businesses</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">85%</div>
+              <div class="finding-text">
+                <h4>Face Lending Barriers</h4>
+                <p>Credit scores, collateral, discriminatory practices exclude residents</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">75%</div>
+              <div class="finding-text">
+                <h4>Want Collective Economics</h4>
+                <p>Interest in mutual aid models, keeping money circulating locally</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="consensus-box">
+            <h4>Consensus Points</h4>
+            <div class="consensus-item">Traditional banking designed to exclude</div>
+            <div class="consensus-item">Collective action necessary - external capital isn't coming</div>
+            <div class="consensus-item">Must accommodate non-traditional income</div>
+            <div class="consensus-item">Reference West College Hill's 77% homeownership as blueprint</div>
+          </div>
+
+          <div class="concerns-box" style="margin-top: 20px;">
+            <h4>Key Concerns</h4>
+            <div class="concern-item">"Redlining never ended, it just got digitized"</div>
+            <div class="concern-item">Predatory lenders charging 400% interest</div>
+            <div class="concern-item">Past bankruptcy creates permanent exclusion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Housing Pillar -->
+  <section class="pillar-section">
+    <div class="container">
+      <div class="pillar-header">
+        <div class="pillar-icon">🏡</div>
+        <div>
+          <div class="pillar-title">Housing</div>
+          <div class="pillar-subtitle">Rental and ownership options</div>
+        </div>
+      </div>
+
+      <div class="pillar-content">
+        <div>
+          <ul class="findings-list">
+            <li class="finding-item">
+              <div class="finding-percent">40%</div>
+              <div class="finding-text">
+                <h4>Struggle with Maintenance Costs</h4>
+                <p>Aging infrastructure - roofs, furnaces, foundations all failing together</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">35%</div>
+              <div class="finding-text">
+                <h4>Face Homeownership Barriers</h4>
+                <p>Down payment is #1 obstacle - can afford payments, not savings</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">25%</div>
+              <div class="finding-text">
+                <h4>Property Tax Burden</h4>
+                <p>Rising taxes forcing seniors out on fixed incomes</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="consensus-box">
+            <h4>Consensus Points</h4>
+            <div class="consensus-item">Strong desire for homeownership as wealth-building</div>
+            <div class="consensus-item">Community worth investing in - good neighbors</div>
+            <div class="consensus-item">Multi-generational families want to stay</div>
+            <div class="consensus-item">Infrastructure needs (sidewalks for child safety)</div>
+          </div>
+
+          <div class="concerns-box" style="margin-top: 20px;">
+            <h4>Key Concerns</h4>
+            <div class="concern-item">Out-of-town investors buying up properties</div>
+            <div class="concern-item">Landlords raising rent without repairs</div>
+            <div class="concern-item">"One big repair bill shouldn't mean losing your house"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Pillar -->
+  <section class="pillar-section">
+    <div class="container">
+      <div class="pillar-header">
+        <div class="pillar-icon">🏪</div>
+        <div>
+          <div class="pillar-title">Enterprise</div>
+          <div class="pillar-subtitle">Supporting Black-owned businesses</div>
+        </div>
+      </div>
+
+      <div class="pillar-content">
+        <div>
+          <ul class="findings-list">
+            <li class="finding-item">
+              <div class="finding-percent">94%</div>
+              <div class="finding-text">
+                <h4>Support Black-Owned Businesses</h4>
+                <p>High awareness and loyalty - 1996 Eatery mentioned by 70%</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">86%</div>
+              <div class="finding-text">
+                <h4>Missing Basic Services</h4>
+                <p>Pharmacy, urgent care, sit-down restaurants, bank branches</p>
+              </div>
+            </li>
+            <li class="finding-item">
+              <div class="finding-percent">42%</div>
+              <div class="finding-text">
+                <h4>Hamilton Ave Transformation</h4>
+                <p>"Good bones" - potential for OTR-style revitalization</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="consensus-box">
+            <h4>Consensus Points</h4>
+            <div class="consensus-item">Need sit-down family restaurants (not fast food)</div>
+            <div class="consensus-item">Food Truck Fridays should expand</div>
+            <div class="consensus-item">Residents want to spend locally - lack options</div>
+            <div class="consensus-item">North College Hill Bakery (100 years) deserves recognition</div>
+          </div>
+
+          <div class="concerns-box" style="margin-top: 20px;">
+            <h4>Key Concerns</h4>
+            <div class="concern-item">Healthcare desert - seniors struggling for medications</div>
+            <div class="concern-item">Childcare "nearly impossible to find"</div>
+            <div class="concern-item">Dollars leaving community daily</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Voices -->
+  <section class="quotes-section">
+    <div class="container">
+      <div class="section-title">Community Voices</div>
+      <h2 class="section-heading">In Their Own Words</h2>
+
+      <div class="quotes-grid">
+        <div class="quote-card">
+          <div class="quote-text">"Nobody else is coming to save us. But together we have the power to change things."</div>
+          <div class="quote-author">Tanya Williams</div>
+          <div class="quote-context">On community investment</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-text">"Look at what West College Hill accomplished. 77% Black homeownership by 1940. That's our blueprint."</div>
+          <div class="quote-author">Christopher Jackson</div>
+          <div class="quote-context">On historical precedent</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-text">"Hamilton Avenue should be like Vine Street in OTR. We have the buildings - just need the investment and vision."</div>
+          <div class="quote-author">Eric Turner</div>
+          <div class="quote-context">On economic development</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-text">"Building wealth through homeownership is how we change things for the next generation."</div>
+          <div class="quote-author">Keisha Robinson</div>
+          <div class="quote-context">On generational wealth</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-text">"Black women are the economic engine of this community. Support us and watch NCH flourish."</div>
+          <div class="quote-author">Ebony Foster</div>
+          <div class="quote-context">On enterprise</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-text">"The old-timers tell stories about how this community was built. Those oral histories are priceless. Someone should be recording them."</div>
+          <div class="quote-author">David Martin</div>
+          <div class="quote-context">On heritage preservation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Items -->
+  <section class="action-section">
+    <div class="container">
+      <div class="section-title">Recommended Actions</div>
+      <h2 class="section-heading">Implementation Roadmap</h2>
+
+      <div class="action-timeline">
+        <div class="timeline-period">
+          <div class="period-header">
+            <span class="period-badge">0-6 Months</span>
+            <span class="period-title">Quick Wins to Build Trust</span>
+          </div>
+          <div class="action-list">
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Launch Oral History Project</h4>
+                <p>Partner with churches to record elder stories before they're lost</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Create Business Directory</h4>
+                <p>Comprehensive listing with Black-owned business identification</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Address Worst Vacant Properties</h4>
+                <p>Visible action on long-standing eyesores builds credibility</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Expand Food Truck Fridays</h4>
+                <p>Add art vendors, music, make it year-round where possible</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-period">
+          <div class="period-header">
+            <span class="period-badge">6-18 Months</span>
+            <span class="period-title">Foundation Building</span>
+          </div>
+          <div class="action-list">
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Establish Community Investment Fund</h4>
+                <p>With transparent governance and community control</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Launch Land Trust Initiative</h4>
+                <p>Start with 1-2 pilot properties to prove the model</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Recruit Pharmacy/Urgent Care</h4>
+                <p>Address healthcare desert - highest priority service gap</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Down Payment Assistance Program</h4>
+                <p>Partner with CDFIs for sustainable funding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-period">
+          <div class="period-header">
+            <span class="period-badge">2-5 Years</span>
+            <span class="period-title">Transformation</span>
+          </div>
+          <div class="action-list">
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Hamilton Avenue Revitalization</h4>
+                <p>Walkable retail corridor with local ownership</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Heritage & Cultural Hub</h4>
+                <p>Performance venue, gallery, community gathering space</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Youth Employment Pipeline</h4>
+                <p>Connect local businesses with teen job opportunities</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-check"></div>
+              <div class="action-content">
+                <h4>Childcare Infrastructure</h4>
+                <p>Licensed, affordable childcare enables workforce participation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="report-footer">
+    <div class="footer-logo">Common Good Alliance</div>
+    <div class="footer-tagline">"Moving the Dollar in Our Community"</div>
+    <div class="footer-meta">
+      Community Voice Report | North College Hill, Ohio | January 2026<br>
+      Compassion · Trust · Radical Collaboration
+    </div>
+  </footer>
+
+</body>
+</html>
