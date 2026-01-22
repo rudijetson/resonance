@@ -7,3 +7,7 @@ recordings/
 .firebase/
 firebase-debug.log
 .vercel
+.env*.local
+
+# Private/sensitive files
+.private/
