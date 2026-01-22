@@ -1,4 +1,4 @@
-// Resonance - Community Voice Platform
+// MIC - Making Impact Consensus
 // All data flows through /api routes - no direct database access
 
 // Get organization from URL parameter (e.g., ?org=lincoln-heights)

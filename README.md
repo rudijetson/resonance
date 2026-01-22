@@ -1,23 +1,47 @@
-# Resonance - Voice-First Feedback Platform
+# MIC - Market, Impact & Consensus
 
-Transform feedback collection with the simplicity of voice. No applications to download, no user accounts required - just tap and talk.
-
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://resonance-voice.web.app)
-[![Firebase](https://img.shields.io/badge/firebase-hosting-orange)](https://firebase.google.com)
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+Collab's time-boxed civic listening campaign platform. Capture resident voice at scale, identify where true agreement and disagreement exist, and produce decision-ready direction for community redevelopment.
 
 ## Overview
 
-Resonance is an ultra-lightweight voice collection platform that makes gathering authentic feedback as simple as pressing a button. Built with modern web technologies and a vintage aesthetic, it's designed for instant deployment and infinite scalability.
+MIC (Market, Impact & Consensus) modernizes the traditional "town hall mic" by combining opt-in phone and web voice capture with transcription, structured data, and synthesis—producing an executive brief that leaders can use to guide planning, de-risk projects, and build legitimacy early.
 
-## Key Features
+MIC is built for the realities of redevelopment: multiple stakeholders, limited trust, and high political risk. Rather than relying on a small number of loud voices or one-off meetings, MIC creates a repeatable process to gather input across residents, businesses, and institutions—then converts those inputs into a clear **Consensus Map**: what the community supports, what it opposes, what tradeoffs it will accept, and what decision points require further alignment.
 
-- **One-Tap Recording** - No app downloads, no user accounts required
-- **Multi-Tenant Architecture** - Unlimited organizations from single deployment  
-- **Anonymous by Design** - GDPR/CCPA compliant, no personal data collected
-- **Mobile-First** - Works perfectly on any device
-- **Instant Setup** - Organizations create custom portals in 30 seconds
-- **Firebase Backend** - Scales automatically with minimal costs
+## Campaign Deliverables
+
+- **MIC Alignment Brief** — "What we heard"
+- **Consensus Map** — Support, opposition, and tradeoff themes
+- **Prioritized Community Needs** — Ranked by frequency and intensity
+- **Civic-Safe Appendix** — Anonymized excerpts and structured data
+- **Optional Enhancements** — Precedent research boards and site-context visuals
+
+## How It Works
+
+1. **Define Campaign** — Set time box, target stakeholders, and key questions
+2. **Capture Voice** — Residents share via phone or web (opt-in, anonymous, accessible)
+3. **Transcribe & Synthesize** — AI-assisted analysis converts input to structured data
+4. **Deliver Consensus Map** — Decision-ready direction for Phase 0 work
+
+## Use Cases
+
+### Municipal Redevelopment
+- Downtown revitalization planning
+- Economic development initiatives
+- Infrastructure investment decisions
+- Zoning and land use changes
+
+### Community Organizations
+- Neighborhood planning input
+- Capital campaign prioritization
+- Program design feedback
+- Stakeholder alignment
+
+### Phase 0 Support
+- Feasibility study input
+- Funding narrative support
+- Stakeholder buy-in documentation
+- Political risk assessment
 
 ## Technology Stack
 
@@ -28,232 +52,88 @@ Resonance is an ultra-lightweight voice collection platform that makes gathering
 - Progressive Web App capabilities
 
 ### Backend
-- Firebase Hosting with global CDN
-- Firebase Storage for audio file management
-- Firebase Security Rules for access control
-- Cloud Functions ready for processing pipeline
+- Vercel hosting with global CDN
+- Vercel Blob for audio storage
+- Serverless API routes
+- OpenAI Whisper for transcription
 
-### Optional AI Pipeline
-- OpenAI Whisper API for audio transcription
-- GPT-4 API for theme synthesis
-- AssemblyAI for sentiment analysis
-
-## Use Cases
-
-### Community Engagement
-- Municipal planning departments
-- Economic development agencies
-- Community organizations
-- Public consultation requirements
-
-### Enterprise Applications
-- Employee feedback and exit interviews
-- Customer experience capture
-- Product testing and reviews
-- Team retrospectives and pulse checks
-
-### Healthcare & Research
-- Patient experience feedback
-- Clinical trial participant diaries
-- Qualitative research data collection
-- Mental health check-ins
-
-### Education
-- Student voice initiatives
-- Course evaluations
-- Campus climate assessments
-- Parent feedback collection
-
-## Architecture
-
-```
-Browser Web Audio -> Firebase Hosting -> Firebase Storage
-                           |
-                           v
-                    Optional AI Pipeline
-                    (Transcription & Analysis)
-```
+### AI Pipeline
+- Whisper API for audio transcription
+- GPT-4 for theme synthesis and analysis
+- Structured output for Consensus Mapping
 
 ## Project Structure
 
 ```
-resonance/
+mic/
 ├── index.html                 # Landing page
 ├── pages/                     # Application pages
 │   ├── voice.html            # Recording interface
-│   ├── organizations.html    # Organization information
-│   ├── create.html           # Portal generator
+│   ├── organizations.html    # Campaign information
+│   ├── create.html           # Campaign setup
 │   ├── admin.html            # Admin dashboard
 │   ├── analytics.html        # Campaign analytics
-│   └── report-example.html   # Sample report
+│   └── report-example.html   # Sample Alignment Brief
 ├── css/                       # Stylesheets
 │   ├── main.css              # Primary styles
 │   └── mobile.css            # Mobile overrides
 ├── js/                        # JavaScript
 │   └── app.js                # Core application logic
-├── images/                    # Assets
-├── docs/                      # Documentation
-├── storage.rules             # Firebase security rules
-├── firebase.json             # Firebase configuration
-└── package.json              # Project dependencies
+├── api/                       # Serverless API routes
+│   ├── upload.js             # Audio upload handler
+│   ├── recordings.js         # Recording list endpoint
+│   └── health.js             # Health check
+└── images/                    # Assets
 ```
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js and npm installed
-- Firebase CLI (`npm install -g firebase-tools`)
-- Firebase project created
+- Node.js 18+
+- Vercel CLI (`npm install -g vercel`)
+- Vercel account with Blob storage enabled
 
 ### Installation
 
-1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/resonance.git
-cd resonance
-```
+# Clone the repository
+git clone https://github.com/collab/mic.git
+cd mic
 
-2. Install dependencies
-```bash
+# Install dependencies
 npm install
+
+# Start local development
+npm start
 ```
 
-3. Configure Firebase
-```bash
-firebase login
-firebase init
+### Environment Variables
+
+```
+BLOB_READ_WRITE_TOKEN=your_vercel_blob_token
+OPENAI_API_KEY=your_openai_key (optional, for transcription)
 ```
 
-4. Deploy to Firebase
-```bash
-firebase deploy
-```
+## Campaign Pricing
 
-### Configuration
+MIC can be deployed as a standalone engagement campaign or bundled into Phase 0 as the legitimacy and adoption layer that makes redevelopment strategies politically and socially executable.
 
-Firebase configuration in `js/app.js`:
-```javascript
-const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-project.firebaseapp.com",
-    projectId: "your-project",
-    storageBucket: "your-project.firebasestorage.app",
-    messagingSenderId: "your-sender-id",
-    appId: "your-app-id"
-};
-```
-
-Note: Firebase client-side configuration keys are safe to expose publicly. Security is enforced through Firebase Security Rules.
-
-### Storage Rules
-
-Configure `storage.rules` for secure write-only access:
-```javascript
-match /recordings/{org}/{recording} {
-  allow write: if request.resource.size < 50 * 1024 * 1024
-               && request.resource.contentType.matches('audio/.*');
-  allow list: if true;
-  allow read: if false;
-}
-```
-
-## Business Model
-
-### Subscription Tiers
-- **Basic**: $99/month - 100 voices, transcription included
-- **Professional**: $299/month - 500 voices, basic analytics
-- **Enterprise**: $999/month - Unlimited voices, AI synthesis
-- **Campaign**: $500-2000 - 30-60 day project-based pricing
-
-### Unit Economics
-- Transcription cost: $0.006 per minute
-- Average recording: 2-3 minutes
-- Cost per voice: ~$0.02
-- Revenue per voice: $2-10
-- Gross margin: >95%
-
-## API Integration
-
-### Voice Submission Endpoint (Planned)
-```
-POST /api/voice
-Content-Type: application/json
-
-{
-  "orgId": "organization-id",
-  "audio": "base64_encoded_audio",
-  "duration": 134
-}
-```
-
-### Transcript Retrieval (Planned)
-```
-GET /api/transcripts/:orgId
-
-Response:
-{
-  "transcripts": [...],
-  "count": 47,
-  "totalDuration": 6234
-}
-```
-
-## Performance Metrics
-
-- Page Load: < 1 second
-- Time to Interactive: < 2 seconds  
-- Recording Start: Instant
-- Upload Speed: 1-3 seconds per minute of audio
-- Lighthouse Score: 98/100
+- **Standard Campaign** — 30-day time box, web capture, Alignment Brief
+- **Extended Campaign** — 60-day time box, phone + web, enhanced synthesis
+- **Enterprise** — Custom duration, multi-channel, precedent research
 
 ## Security & Privacy
 
-- No personal data collection
-- Write-only storage permissions
-- HTTPS encryption for all traffic
-- GDPR/CCPA compliant by design
+- Anonymous by design — no personal data collected
+- Opt-in participation only
+- GDPR/CCPA compliant
+- Civic-safe output suitable for public distribution
 - Configurable data retention policies
-
-## Testing
-
-```bash
-# Start local development server
-npm start
-
-# Run mobile device tests
-npx playwright test --device="iPhone 15"
-
-# Generate screenshots for documentation
-npm run screenshots
-```
 
 ## Contributing
 
-We welcome contributions. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### Priority Areas
-- Multi-language support
-- Emotion detection integration
-- WhatsApp/SMS voice collection
-- Advanced analytics dashboard
-- Accessibility improvements (WCAG 2.1 AA)
-
-## Support
-
-- Documentation: [docs/](docs/)
-- Issues: [GitHub Issues](https://github.com/yourusername/resonance/issues)
-- Email: support@resonance.app
-
-## License
-
-MIT License - See [LICENSE](LICENSE) file for details
-
-## Acknowledgments
-
-- Firebase for infrastructure
-- OpenAI Whisper for transcription capabilities
-- Community members who believe every voice matters
+This is a Collab product. For partnership inquiries, contact the team.
 
 ---
 
-Built with simplicity and purpose. Serving communities with authentic voice.
+**MIC** — Civic listening that builds legitimacy and de-risks redevelopment.

@@ -1,11 +1,11 @@
 {
-  "name": "resonance",
+  "name": "mic",
   "version": "2.0.0",
-  "description": "Voice-first feedback platform with AI agent capabilities",
+  "description": "MIC - Market, Impact & Consensus: Collab's civic listening campaign platform",
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev"
+    "start": "vercel dev --listen 5151",
+    "dev": "vercel dev --listen 5151"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.1.76",

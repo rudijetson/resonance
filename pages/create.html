@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Organization Link - Resonance</title>
+    <title>Create Organization Link - MIC</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
         
@@ -172,13 +172,13 @@
             }
             
             // Store org info in localStorage for admin view
-            const orgs = JSON.parse(localStorage.getItem('resonance-orgs') || '{}');
+            const orgs = JSON.parse(localStorage.getItem('mic-orgs') || '{}');
             orgs[orgId] = {
                 name: orgName,
                 created: new Date().toISOString(),
                 lastUsed: null
             };
-            localStorage.setItem('resonance-orgs', JSON.stringify(orgs));
+            localStorage.setItem('mic-orgs', JSON.stringify(orgs));
             
             const baseUrl = window.location.origin + window.location.pathname.replace('create.html', 'voice.html');
             const customLink = `${baseUrl}?org=${encodeURIComponent(orgId)}&name=${encodeURIComponent(orgName)}`;

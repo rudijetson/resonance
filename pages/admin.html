@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Resonance</title>
+    <title>Admin Dashboard - MIC</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
@@ -142,7 +142,7 @@
     </style>
 </head>
 <body>
-    <h1>Resonance Admin Dashboard</h1>
+    <h1>MIC Admin Dashboard</h1>
 
     <div class="stats">
         <div class="stat-card">
@@ -191,7 +191,7 @@
 
         async function loadOrganizations() {
             // Get orgs from localStorage (client-side org registry)
-            const storedOrgs = JSON.parse(localStorage.getItem('resonance-orgs') || '{}');
+            const storedOrgs = JSON.parse(localStorage.getItem('mic-orgs') || '{}');
 
             // Always include 'general' as default
             orgsData = {
@@ -320,7 +320,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `resonance-organizations-${new Date().toISOString().split('T')[0]}.csv`;
+            a.download = `mic-organizations-${new Date().toISOString().split('T')[0]}.csv`;
             a.click();
         }
 

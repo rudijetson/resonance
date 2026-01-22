@@ -7,6 +7,15 @@ export const config = {
   },
 };
 
+// Helper to collect request body as buffer
+async function collectBody(req) {
+  const chunks = [];
+  for await (const chunk of req) {
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -16,8 +25,11 @@ export default async function handler(req, res) {
     const filename = req.query.filename || `recording-${Date.now()}.webm`;
     const orgId = req.query.org || 'general';
 
+    // Buffer the body first (fixes dev mode stream issue)
+    const body = await collectBody(req);
+
     // Upload to Vercel Blob
-    const blob = await put(`recordings/${orgId}/${filename}`, req, {
+    const blob = await put(`recordings/${orgId}/${filename}`, body, {
       access: 'public',
       contentType: req.headers['content-type'] || 'audio/webm',
     });
